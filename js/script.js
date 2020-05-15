@@ -5,6 +5,8 @@ window.onload = () => {
     const addCardPopup = new AddCardPopup();
     const profilePopup = new ProfilePopup();
 
+    // Отлично!: Хороший пример динамического переиспользования контейнера для полноразмерных изображений.
+    // Выполняет рекомендацию из дополнительного задания.
     function openFullSizeImage(event) {
         const imagePopup = new ImageHandler();
         if (event.target.classList.contains("place-card__image")) {

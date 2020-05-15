@@ -7,6 +7,7 @@ class Card extends BaseComponent {
     }
 
     get template() {
+        // Можно лучше: Раз содержимого внутри <button></button> нет, элемент вполне может быть и самозакрывающимся
         return `<div class="place-card">
                     <div class="place-card__image" style="background-image: url('${this.url}');">
                         <button class="place-card__delete-icon"></button>
@@ -27,6 +28,8 @@ class Card extends BaseComponent {
     remove(event) {
         const path = getEventPath(event);
         if (event.target.classList.contains("place-card__delete-icon")) {
+        // Можно лучше: Можно вынести path[2] в константу, пожертвовав краткостью кода, но получив возможность 
+        // явно видеть что в path[2] должно находиться и зачем оно нужно 
             $('.places-list').removeChild(path[2]);
         }
     }

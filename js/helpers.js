@@ -3,6 +3,7 @@ const createElement = element => document.createElement(element);
 
 
 function $event(selector) {
+    // Можно лучше: Предпочтительно было бы использовать более говорящее имя, чем 'z'
     const z = Object.create($event.prototype);
     z.e = selector;
     return z;
@@ -25,6 +26,8 @@ function getEventPath(event) {
 function closePopup(event, popup, toggleMe) {
     const path = getEventPath(event);
     if (event.type === "submit") {
+        // Можно лучше: Можно вынести path[1] в константу, пожертвовав краткостью кода, но получив возможность 
+        // явно видеть что в path[1] должно находиться и зачем оно нужно 
         popup.removeChild(path[1]);
         popup.classList.toggle(toggleMe);
     }

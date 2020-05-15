@@ -55,6 +55,9 @@ class AddCardPopup extends BaseComponent {
 
         const formNewName = document.forms.new.elements.name;
         const formErrorCardName = $("#error-card-name");
+        // Можно лучше: Можно вынести минимальную и максимальную допустимые длины строки в константы.
+        // Сейчас в коде 3 места где они переиспользуются и в случае изменений нам нужно будет не забыть
+        // вручную поменять все N. Также это повысит явность.
         isValid = validateForm(formErrorCardName, formNewName, isValid, 2, 30);
 
         const formNewLink = document.forms.new.elements.link;

@@ -61,6 +61,9 @@ class ProfilePopup extends BaseComponent {
 
         const formProfileName = document.forms.profile.elements.name;
         const formErrorProfileName = $("#error-profile-name");
+        // Можно лучше: Можно вынести минимальную и максимальную допустимые длины строки в константы.
+        // Сейчас в коде 3 места где они переиспользуются и в случае изменений нам нужно будет не забыть
+        // вручную поменять все N. Также это повысит явность.
         isValid = validateForm(formErrorProfileName, formProfileName, isValid, 2, 30);
 
 
